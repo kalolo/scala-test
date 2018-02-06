@@ -2,13 +2,6 @@ package com.scalalearning.array
 
 class ArrayAlgorithms {
 
-  def verifyInt() : Int = 2 * 2;
-
-  def verifyString() : String = {
-    val name = "Carlos Lopez";
-    return name;
-  }
-
   def segregateArray(arr: Array[Int]): Array[Int] = {
 
     var arrSegregated = new Array[Int](arr.length)
@@ -34,13 +27,23 @@ class ArrayAlgorithms {
 
     for (i <- 0 to ( arr.length - 1) ) {
 
-      if ( arr(i) != 0) {
+      check(arr, i, end)
+      end -=1
+    }
 
-        arr(i) = switch(arr, i, end)
+    // will continue later...
+    arr
+  }
 
-      }
+  def check(arr: Array[Int], current: Int, end: Int): Array[Int] = {
 
+    var swap = arr(current)
+    arr(current) = arr(end)
+    arr(end) = swap
+    //end -= 1
 
+    if ( arr(current) != 0 ) {
+      check(arr, current, end-1 )
     }
 
     arr

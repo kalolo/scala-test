@@ -1,5 +1,6 @@
 
 import org.scalatest.FunSuite
+import org.scalatest.Matchers._
 
 import com.scalalearning.array.ArrayAlgorithms
 
@@ -7,6 +8,7 @@ class SegregatedTest extends FunSuite {
 
   test("Array(0) -> Array(0)") {
     assert( new ArrayAlgorithms().segregateArray( Array(0) ).deep == Array(0).deep)
+    new ArrayAlgorithms().segregateArray( Array(0) ) should equal (Array(0))
   }
 
   test("Array(1) -> Array(1)") {
