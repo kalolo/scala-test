@@ -21,6 +21,12 @@ class ArrayAlgorithms {
     return arrSegregated
   }
 
+  def equilibriumIndex(arr: Array[Int]): Int = {
+
+    0
+  }
+
+
   def segregateArray2(arr: Array[Int]): Array[Int] = {
 
     var end = arr.length - 1;

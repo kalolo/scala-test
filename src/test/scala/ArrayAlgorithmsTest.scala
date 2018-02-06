@@ -26,4 +26,21 @@ class ArrayAlgorithmsTest extends FlatSpec {
       instance.segregateArray(array) should equal (segregated)
     }
   }
+
+  "equilibriumIndex" should "[-7, 1, 5, 2, -4, 3, 0] -> 3" in {
+
+    val instance = new ArrayAlgorithms;
+
+    val tableData = Table(
+      ("array", "index"),
+      (Array(-7, 1, 5, 2, -4, 3, 0), 3),
+      (Array(-7, 1, 5, 2, -4, 1, 0), 4),
+      (Array(-7, 1, 5, 2, -4, 231, 0), -1)
+    )
+
+    forAll (tableData) { (array, index) =>
+      instance.equilibriumIndex(array) should equal (index)
+    }
+
+  }
 }
